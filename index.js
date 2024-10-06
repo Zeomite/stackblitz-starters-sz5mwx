@@ -23,13 +23,13 @@ app.get('/products/sort/price-low-to-high', (req, res) => {
 app.get('/products/filter/ram', (req, res) => {
   const ram = parseInt(req.query.ram);
   const filteredProducts = products.filter((product) => product.ram === ram);
-  res.json({ products: filteredProducts });
+  res.json(filteredProducts);
 });
 
 app.get('/products/filter/rom', (req, res) => {
   const rom = parseInt(req.query.rom);
   const filteredProducts = products.filter((product) => product.rom === rom);
-  res.json({ products: filteredProducts });
+  res.json(filteredProducts);
 });
 
 app.get('/products/filter/brand', (req, res) => {
@@ -37,7 +37,7 @@ app.get('/products/filter/brand', (req, res) => {
   const filteredProducts = products.filter(
     (product) => product.brand.toLowerCase() === brand
   );
-  res.json({ products: filteredProducts });
+  res.json(filteredProducts);
 });
 
 app.get('/products/filter/os', (req, res) => {
@@ -45,17 +45,17 @@ app.get('/products/filter/os', (req, res) => {
   const filteredProducts = products.filter(
     (product) => product.os.toLowerCase() === os
   );
-  res.json({ products: filteredProducts });
+  res.json(filteredProducts );
 });
 
 app.get('/products/filter/price', (req, res) => {
   const price = parseInt(req.query.price);
   const filteredProducts = products.filter((product) => product.price <= price);
-  res.json({ products: filteredProducts });
+  res.json( filteredProducts );
 });
 
 app.get('/products', (req, res) => {
-  res.json({ products });
+  res.json( products);
 });
 
 app.listen(port, () => {
